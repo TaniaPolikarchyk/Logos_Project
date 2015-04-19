@@ -21,26 +21,26 @@ public class Students {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="id_Student")
+	@Column(name="idStudent")
 	private int id;
 	
-	@Column
+	@Column(name="FirstName")
 	private String firstName;
 	
-	@Column
+	@Column(name="LastName")
 	private String lastName;
 	
-	@Column
+	@Column(name="YearOfBirth")
 	private int yearOfBirth;
 	
-	@Column
+	@Column(name="Course")
 	private int course;
 	
-	@Column
+	@Column(name="URLPicture")
 	private String urlPicture;
 	
 	@ManyToOne()
-	@JoinColumn(name="id_department")
+	@JoinColumn(name="idDepartment")
 	private Department department;
 	
 	@ManyToMany()
@@ -108,11 +108,11 @@ public class Students {
 
 	
 
-	public Department getDepartments() {
+	public Department getDepartment() {
 		return department;
 	}
 
-	public void setDepartments(Department departments) {
+	public void setDepartment(Department departments) {
 		this.department = department;
 	}
 
