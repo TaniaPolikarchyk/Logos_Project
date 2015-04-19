@@ -9,23 +9,23 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="subjectAndCourse")
+@Table(name="subjectandcourse")
 public class SubjectAndCourse {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="id_subjectAndCourse")
+	@Column(name="idSubjectAndCourse")
 	private int id;
 	
-	@Column
+	@Column(name="Course")
 	private int course;
 	
 	@ManyToOne
-	@JoinColumn(name="id_department")
+	@JoinColumn(name="idDepartment")
 	private Department department;
 	
 	@ManyToOne
-	@JoinColumn(name="id_subjects")
+	@JoinColumn(name="idSubjects")
 	private Subjects subjects;
 	
 	public SubjectAndCourse() {

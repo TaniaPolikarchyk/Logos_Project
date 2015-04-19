@@ -18,14 +18,14 @@ public class Department {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="id_department")
+	@Column(name="idDepartment")
 	private int id;
 	
-	@Column
+	@Column(name="Name")
 	private String name;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_faculty")
+	@JoinColumn(name = "idFaculty")
 	private Faculty faculty;
 	
 	@OneToMany(mappedBy="department", fetch = FetchType.EAGER)

@@ -16,10 +16,10 @@ public class Faculty {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="id_faculty")
+	@Column(name="idFaculty")
 	private int id;
 	
-	@Column
+	@Column (name="Name")
 	private String name;
 	
 	@OneToMany(mappedBy="faculty", fetch= FetchType.EAGER)

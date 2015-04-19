@@ -18,17 +18,17 @@ public class Marks {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="id_marks")
+	@Column(name="idMarks")
 	private int id;
 	
-	@Column
+	@Column(name="Name")
 	private int value;
 	
 	@ManyToMany(mappedBy="marks", fetch= FetchType.EAGER)
 	private Set<Students> students;
 	
 	@ManyToOne
-	@JoinColumn(name="id_subjects")
+	@JoinColumn(name="idSubjects")
 	private Subjects subject;
 	
 	public Marks() {

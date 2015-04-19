@@ -19,14 +19,14 @@ public class Subjects {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="id_subjects")
+	@Column(name="idSubjects")
 	private int id;
 	
-	@Column
+	@Column(name="Name")
 	private String name;
 	
 	@ManyToOne
-	@JoinColumn(name="id_Teacher")
+	@JoinColumn(name="idTeacher")
 	private Teachers teachers;
 	
 	@OneToMany(mappedBy= "subjects", fetch= FetchType.EAGER)
