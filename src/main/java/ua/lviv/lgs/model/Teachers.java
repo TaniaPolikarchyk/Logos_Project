@@ -18,27 +18,27 @@ public class Teachers {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="id_Teacher")
+	@Column(name="idTeacher")
 	private int id;
 	
-	@Column
+	@Column(name="FirstName")
 	private String firstName;
 	
-	@Column
+	@Column(name="LastName")
 	private String lastName;
 	
-	@Column
+	@Column(name="YearOfBirth")
 	private int yearOfBirth;
 	
-	@Column
+	@Column(name="Course")
 	private int course;
 	
-	@Column
+	@Column(name="URLPicture")
 	private String urlPicture;
 	
 	@ManyToOne()
-	@JoinColumn(name="id_department")
-	private Set<Department> departments;
+	@JoinColumn(name="idDepartment")
+	private Department department;
 	
 	@OneToMany(mappedBy="teachers", fetch= FetchType.EAGER)
 	private Set<Subjects> subjects;
@@ -87,12 +87,14 @@ public class Teachers {
 		this.course = course;
 	}
 
-	public Set<Department> getDepartments() {
-		return departments;
+	
+
+	public Department getDepartment() {
+		return department;
 	}
 
-	public void setDepartments(Set<Department> departments) {
-		this.departments = departments;
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 
 	public Set<Subjects> getSubjects() {
@@ -106,7 +108,7 @@ public class Teachers {
 	public String toString() {
 		return ("Detailed information about this Teacher: 1. Teacher's ID: " + id + "2. Teacher's First Name: " + 
 	firstName + "3. Teacher's Last Name: " + lastName +  "4. Teacher's Year of Birth: " + yearOfBirth + 
-	"5.Course:" + course + 	"6.Departments, on which teacher works: " + departments + 
+	"5.Course:" + course + 	"6.Department, on which teacher works: " + department + 
 	"7. Subjects tought by tercher: "+  subjects +" 8. Teacher's photo");
 	}
 }
