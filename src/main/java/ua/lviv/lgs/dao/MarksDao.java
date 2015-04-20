@@ -2,6 +2,8 @@ package ua.lviv.lgs.dao;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface MarksDao extends PagingAndSortingRepository {
+import ua.lviv.lgs.model.Marks;
+
+public interface MarksDao extends PagingAndSortingRepository <Marks,Integer>{
 
 }

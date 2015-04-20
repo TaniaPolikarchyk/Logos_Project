@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 import ua.lviv.lgs.dao.TeachersDao;
 import ua.lviv.lgs.model.Department;
-import ua.lviv.lgs.model.Teachers;
+import ua.lviv.lgs.model.Teacher;
 import ua.lviv.lgs.service.TeachersService;
 
 @Service("teachersService")
@@ -23,21 +23,21 @@ public class TeachersServiceImpl implements TeachersService {
 	private TeachersDao dao;
 
 	@Override
-	public Iterable<Teachers> viewAllTeachers() {
+	public Iterable<Teacher> viewAllTeachers() {
 				return dao.findAll();
 	}
 
 	@Override
 	@Transactional
-	public void addTeacher(Teachers teacher) {
+	public void addTeacher(Teacher teacher) {
 		dao.save(teacher);
 		
 	}
 
 	@Override
 	@Transactional
-	public void editTeacher(Integer id, Teachers teacher) {
-		 Teachers newTeacher = (Teachers) dao.findOne(id);
+	public void editTeacher(Integer id, Teacher teacher) {
+		 Teacher newTeacher = (Teacher) dao.findOne(id);
 		 newTeacher.setFirstName(teacher.getFirstName());
 		 newTeacher.setLastName(teacher.getLastName());
 		 newTeacher.setYearOfBirth(teacher.getYearOfBirth());
@@ -54,27 +54,27 @@ public class TeachersServiceImpl implements TeachersService {
 	}
 
 	@Override
-	public Iterable<Teachers> sortTeachersByFirstName(Sort firstName) {
+	public Iterable<Teacher> sortTeachersByFirstName(Sort firstName) {
 		return dao.findAll(firstName);
 	}
 
 	@Override
-	public Iterable<Teachers> sortTeachersByDepartment(Sort department) {
+	public Iterable<Teacher> sortTeachersByDepartment(Sort department) {
 		return dao.findAll(department);
 	}
 
 	@Override
-	public Iterable<Teachers> sortTeachersByFaculty(Sort faculty) {
+	public Iterable<Teacher> sortTeachersByFaculty(Sort faculty) {
 		return dao.findAll(faculty);
 	}
 
 	@Override
-	public Set<Teachers> filterTeacherByFirstName(String firstName) {
+	public Set<Teacher> filterTeacherByFirstName(String firstName) {
 		Iterable setofAllTeachers = dao.findAll();
-		Set<Teachers> filteredTeachers = new HashSet<Teachers>();
+		Set<Teacher> filteredTeachers = new HashSet<Teacher>();
 		Iterator itr = setofAllTeachers.iterator();
 		while(itr.hasNext()){
-			Teachers t = (Teachers) itr.next();
+			Teacher t = (Teacher) itr.next();
 			if(t.getFirstName().equals(firstName)){
 				filteredTeachers.add(t);
 			}
@@ -83,12 +83,12 @@ public class TeachersServiceImpl implements TeachersService {
 	}
 
 	@Override
-	public Set<Teachers> filterTeacherByDepartment(String department) {
+	public Set<Teacher> filterTeacherByDepartment(String department) {
 		Iterable setofAllTeachers = dao.findAll();
-		Set<Teachers> filteredTeachers = new HashSet<Teachers>();
+		Set<Teacher> filteredTeachers = new HashSet<Teacher>();
 		Iterator itr = setofAllTeachers.iterator();
 		while(itr.hasNext()){
-			Teachers t = (Teachers) itr.next();
+			Teacher t = (Teacher) itr.next();
 			if(t.getDepartment().equals(department)){
 				filteredTeachers.add(t);
 			}
@@ -97,12 +97,12 @@ public class TeachersServiceImpl implements TeachersService {
 	}
 
 	@Override
-	public Set<Teachers> filterTeacherByFaculty(String faculty) {
+	public Set<Teacher> filterTeacherByFaculty(String faculty) {
 		Iterable setofAllTeachers = dao.findAll();
-		Set<Teachers> filteredTeachers = new HashSet<Teachers>();
+		Set<Teacher> filteredTeachers = new HashSet<Teacher>();
 		Iterator itr = setofAllTeachers.iterator();
 		while(itr.hasNext()){
-			Teachers t = (Teachers) itr.next();
+			Teacher t = (Teacher) itr.next();
 			if(t.getDepartment().getFaculty().equals(faculty)){
 				filteredTeachers.add(t);
 			}

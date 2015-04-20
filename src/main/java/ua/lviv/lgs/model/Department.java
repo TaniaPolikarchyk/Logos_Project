@@ -35,7 +35,7 @@ public class Department {
 	private Set<Students> students;
 	
 	@OneToMany(mappedBy="department", fetch= FetchType.EAGER)
-	private Set<Teachers> teachers;
+	private Set<Teacher> teachers;
 	
 	public Department() {
 		
@@ -79,11 +79,11 @@ public class Department {
 		this.students = students;
 	}
 
-	public Set<Teachers> getTeachers() {
+	public Set<Teacher> getTeachers() {
 		return teachers;
 	}
 
-	public void setTeachers(Set<Teachers> teachers) {
+	public void setTeachers(Set<Teacher> teachers) {
 		this.teachers = teachers;
 	}
 

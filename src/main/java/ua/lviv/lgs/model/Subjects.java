@@ -27,9 +27,9 @@ public class Subjects {
 	
 	@ManyToOne
 	@JoinColumn(name="idTeacher")
-	private Teachers teachers;
+	private Teacher teachers;
 	
-	@OneToMany(mappedBy= "subjects", fetch= FetchType.EAGER)
+	@OneToMany(mappedBy= "subject", fetch= FetchType.EAGER)
 	private List<Marks> marks;
 	
 	@OneToMany(mappedBy="subjects", fetch= FetchType.EAGER)
@@ -56,11 +56,11 @@ public class Subjects {
 		this.name = name;
 	}
 
-	public Teachers getTeachers() {
+	public Teacher getTeachers() {
 		return teachers;
 	}
 
-	public void setTeachers(Teachers teachers) {
+	public void setTeachers(Teacher teachers) {
 		this.teachers = teachers;
 		}
 	

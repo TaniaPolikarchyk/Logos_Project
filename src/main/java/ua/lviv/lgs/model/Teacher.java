@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="teachers")
-public class Teachers {
+public class Teacher {
 	
 	@Id
 	@GeneratedValue
@@ -43,7 +43,7 @@ public class Teachers {
 	@OneToMany(mappedBy="teachers", fetch= FetchType.EAGER)
 	private Set<Subjects> subjects;
 	
-	public Teachers() {
+	public Teacher() {
 		
 	}
 

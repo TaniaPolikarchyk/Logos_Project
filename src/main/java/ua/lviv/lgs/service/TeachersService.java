@@ -7,18 +7,18 @@ import java.util.Set;
 
 
 import org.springframework.data.domain.Sort;
-import ua.lviv.lgs.model.Teachers;
+import ua.lviv.lgs.model.Teacher;
 
 public interface TeachersService {
 	
-	public Iterable<Teachers> viewAllTeachers();
-	public void addTeacher(Teachers teacher);
-	public void editTeacher(Integer id, Teachers teacher);
-	public Iterable<Teachers> sortTeachersByFirstName(Sort firstName);
-	public Iterable<Teachers> sortTeachersByDepartment(Sort department);
-	public Iterable<Teachers> sortTeachersByFaculty(Sort faculty);
-	public Set<Teachers> filterTeacherByFirstName(String firstName);
-	public Set<Teachers> filterTeacherByDepartment(String department);
-	public Set<Teachers> filterTeacherByFaculty(String faculty);
+	public Iterable<Teacher> viewAllTeachers();
+	public void addTeacher(Teacher teacher);
+	public void editTeacher(Integer id, Teacher teacher);
+	public Iterable<Teacher> sortTeachersByFirstName(Sort firstName);
+	public Iterable<Teacher> sortTeachersByDepartment(Sort department);
+	public Iterable<Teacher> sortTeachersByFaculty(Sort faculty);
+	public Set<Teacher> filterTeacherByFirstName(String firstName);
+	public Set<Teacher> filterTeacherByDepartment(String department);
+	public Set<Teacher> filterTeacherByFaculty(String faculty);
 	public void deleteTeacher(Integer id);
 	}
