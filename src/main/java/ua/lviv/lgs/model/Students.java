@@ -21,7 +21,7 @@ public class Students {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="idStudent")
+	@Column(name="idStudents")
 	private int id;
 	
 	@Column(name="FirstName")
@@ -51,6 +51,10 @@ public class Students {
 	public Students() {
 		
 	}
+	
+//	public void setId(int id) {
+//		this.id = id;
+//	}
 
 	public int getId() {
 		return id;
@@ -66,10 +70,6 @@ public class Students {
 
 	public int getYearOfBirth() {
 		return yearOfBirth;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public void setFirstName(String firstName) {
