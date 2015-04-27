@@ -57,9 +57,9 @@
 	</c:if>
 
 
- <c:url var="addStudent" value="/students/add" />
+	<c:url var="addStudent" value="/students/add" />
 
-	<form:form action="${addStudent}" commandName="students">
+	<form:form action="${addStudent}" commandName="stud">
 		<table>
 			<%-- <tr>
 
@@ -78,17 +78,17 @@
 
 			<tr>
 
-				<td><form:label path="yearOfBirth">Last name:
+				<td><form:label path="lastName">Last name:
 </form:label></td>
-				<td><form:input path="yearOfBirth" /></td>
+				<td><form:input path="lastName" /></td>
 			</tr>
-
+<%-- 
 			<tr>
 
 				<td><form:label path="studentAge"> Age:
 </form:label></td>
 				<td><form:input path="studentAge" /></td>
-			</tr>
+			</tr> --%>
 
 			<tr>
 

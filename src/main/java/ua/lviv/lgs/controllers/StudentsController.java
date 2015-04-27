@@ -20,12 +20,13 @@ public class StudentsController {
 
 	@RequestMapping(value = "/students", method = RequestMethod.GET)
 	public String listAuthors(Model model) {
+		model.addAttribute("stud", new Students());
 		model.addAttribute("students", service.viewAllStudents());
 		return "students";
 	}
 
 	@RequestMapping(value = "/students/add", method = RequestMethod.POST)
-	public String addStudent(@ModelAttribute("students") Students s) {
+	public String addStudent(@ModelAttribute("stud") Students s) {
 		service.addStudent(s);
 		return "redirect:/students";
 	}
